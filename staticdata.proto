@@ -1,0 +1,25 @@
+package tibia.protobuf.staticdata;
+message StaticData {
+	repeated .tibia.protobuf.staticdata.Monster monster = 1;
+	repeated .tibia.protobuf.staticdata.Achievement achievements = 2;
+}
+message Outfit {
+	optional uint32 outfit_id = 1;
+	optional uint32 head_color = 2;
+	optional uint32 torso_color = 3;
+	optional uint32 legs_color = 4;
+	optional uint32 detail_color = 5;
+	optional uint32 addons = 6;
+	optional uint32 object_appearance_type_id = 7;
+}
+message Monster {
+	optional uint32 race = 1;
+	optional string name = 2;
+	optional .tibia.protobuf.staticdata.Outfit outfit = 3;
+}
+message Achievement {
+	optional uint32 achievement_id = 1;
+	optional string name = 2;
+	optional string description = 3;
+	optional uint32 grade = 4;
+}
